@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Беларусь - мирная страна</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://i.pinimg.com/736x/92/9b/d2/929bd27f23910cfd983f964031efaca8.jpg'); /* Изображение камуфляжа */
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        header {
+            background: rgba(77, 93, 51, 0.8); /* полупрозрачный цвет хаки */
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 10px;
+        }
+        section {
+            flex: 0 1 calc(30% - 20px); /* Ширина секций: 30% с учетом отступов */
+            padding: 20px;
+            margin: 10px;
+            background: rgba(77, 93, 51, 0.7); /* полупрозрачный цвет хаки */
+            border-radius: 5px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.5s forwards; /* Анимация появления */
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: rgba(77, 93, 51, 0.8); /* полупрозрачный цвет хаки */
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .gallery {
+            position: relative;
+            max-width: 100%;
+            margin-top: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            display: none; /* Скрываем все изображения по умолчанию */
+        }
+        .gallery img.active {
+            display: block; /* Показываем только активное изображение */
+            animation: fadeIn 1s; /* Анимация перехода */
+        }
+        .gallery-button {
+            cursor: pointer;
+            margin: 5px;
+            padding: 10px 15px;
+            background: rgba(77, 93, 51, 0.8);
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        /* Медиазапрос для мобильных устройств */
+        @media (max-width: 768px) {
+            section {
+                flex: 0 1 100%; /* Ширина секций: 100% на мобильных */
+            }
+        }
+            .quiz-container {
+                display: none; /* Скрываем тест по умолчанию */
+                margin-top: 20px;
+        }
+            .question {
+                margin-bottom: 15px; /* Отступ снизу для разделения вопросов */
+        }
+
+            .question label {
+                display: block; /* Вертикальное выравнивание */
+                margin-left: 20px; /* Отступ для меток */
+        }
+            .result {
+                margin-top: 20px;
+                font-weight: bold;
+        }
+            .show {
+                display: block; /* Для отображения элементов */
+        }
+            button {
+                background-color: rgba(77, 93, 51, 0.7); /* Полупрозрачный цвет хаки */
+                color: white; /* Цвет текста */
+                border: none; /* Убираем рамку */
+                border-radius: 5px; /* Скругление углов */
+                padding: 10px 15px; /* Отступы внутри кнопки */
+                cursor: pointer; /* Указатель при наведении */
+                transition: background-color 0.3s; /* Плавный переход цвета */
+        }
+            button:hover {
+                background-color: rgba(77, 93, 51, 1); /* Более насыщенный цвет при наведении */
+        }
+    
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>80 страниц истории Великой Победы</h1>
+</header>
+<div class="container">
+<section>
+    <h2>Великая Отечественная война</h2>
+    <p>Великая Отечественная война стала одним из самых трагических и героических периодов в истории Беларуси. С 1941 по 1945 год страна пережила тяжелые испытания, когда фашистская Германия оккупировала ее территории. Многие города и деревни были разрушены, а миллионы людей стали жертвами войны.</p>
+    <p>Беларусь стала ареной ожесточенных боев, и в ней проходили важные сражения, такие как битва за Минск и битва за Слуцк. Партизанское движение, активно действовавшее в тылу врага, играло ключевую роль в сопротивлении оккупантам. Партизаны совершали смелые операции, уничтожая вражеские гарнизоны и саботируя транспортные пути.</p>
+    <p>Победа в Великой Отечественной войне стала символом мужества и стойкости белорусского народа. Каждый год в стране проходят мероприятия, посвященные памяти солдат, сражавшихся за свободу и независимость. Памятники и мемориалы, такие как "Брестская крепость" и "Хатынь", напоминают о героизме и трагедии тех времен.</p>
+
+    <div class="gallery">
+        <img src="https://cdn.culture.ru/images/d2e5e8de-4f19-5803-87ef-8034029e4324" alt="Война 1" class="active">
+        <img src="https://cdnstatic.rg.ru/uploads/photogallery/2024/07/22/20_bce.jpg" alt="Война 2">
+        <img src="https://avatars.dzeninfra.ru/get-zen_doc/10074064/pub_64a6cf32b070493e1b3c1b53_64a6cf356ece572f16731f55/scale_1200" alt="Война 3">
+        <button class="gallery-button" onclick="changeImage(this)">Сменить изображение</button>
+    </div>
+</section>
+
+   <section>
+        <h2>Герои Великой Отечественной войны</h2>
+        <p>Среди известных воинов можно отметить Иона Солтыса, который стал героем за свои подвиги в боях. Он командовал партизанским отрядом и провел множество операций против оккупантов, за что был награжден медалью "За отвагу". Солтыс стал символом борьбы и мужества белорусов в тяжелые времена.</p>
+        <p>Другие герои, такие как маршал Георгий Жуков и генерал-майор Александр Суворов, также внесли значительный вклад в защиту страны и освободительные операции.</p>
+
+        <div class="gallery">
+             <img src="https://avatars.mds.yandex.net/i?id=44e6d6a3eaec1f77b7e87508927eab04_sr-8087945-images-thumbs&n=13" alt="Герои 1" class="active">
+             <img src="https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_683bee3295eee80f6c619785_683c51d615e49e5225c32556/scale_1200" alt="Герои 2">
+             <img src="https://avatars.mds.yandex.net/i?id=ec4f15f313fa3c0cd53062071bff25d9_l-5235436-images-thumbs&n=13" alt="Герои 3">
+            <button class="gallery-button" onclick="changeImage(this)">Сменить изображение</button>
+        </div>
+    </section>
+
+
+    <section>
+        <h2>Военно-патриотические клубы</h2>
+        <p>В Беларуси активно работают военно-патриотические клубы, такие как "Орлята". Этот клуб объединяет молодежь, обучая их основам военно-патриотического воспитания, физической подготовке и навыкам гражданской обороны. Участники клуба участвуют в различных соревнованиях, акциях и мероприятиях, направленных на развитие патриотизма и уважения к истории своей страны.</p>
+
+        <div class="gallery">
+           <img src="https://sun9-54.userapi.com/s/v1/if2/CIcXLWiP09JaglIXejEx_prGKQXrRToW-mMhlWHgGeC9CFxd_NxabfmdmcvbGARusZVkkQMx4mqvyH_YdgN4cJxv.jpg?quality=95&as=32x19,48x29,72x43,108x65,160x96,240x144,360x215,480x287,540x323,640x383,720x431,1080x646,1223x732&from=bu&cs=1223x0" alt="Клубы 1" class="active">
+           <img src="https://sun9-31.userapi.com/s/v1/if2/xBjcek5smBiWcWS1_WOqqWVEhez_I_R6RroLNwNj6Ze6qvBpsGHNV_qt5zEIz6LcMS3hKPnOitA-iuewY8zg5yLW.jpg?quality=95&as=32x19,48x28,72x42,108x63,160x94,240x141,360x211,480x281,540x316,640x375,720x422,1080x633,1191x698&from=bu&u=XafG69hUyvO5lnP3w2qB_rXiO58TppQU-k-K9yvGtx0&cs=540x0" alt="Клубы 2">
+            <button class="gallery-button" onclick="changeImage(this)">Сменить изображение</button>
+        </div>
+    </section>
+
+ 
+
+            <section>
+        <h2>Поощадь победы и Курган Славы</h2>
+        <ul>
+            <li><strong>Площадь Победы в Минске </strong> одно из самых значимых мест, посвященных Великой Отечественной войне. Здесь находится главный памятник — обелиск, символизирующий победу над фашизмом. Он был открыт в 1984 году и стал центром торжеств, связанных с Днем Победы.На площади проходят парады и другие мероприятия, в том числе возложения цветов к памятникам. Важным элементом площади является также "Стена памяти", на которой увековечены имена героев, погибших в боях.</li>
+        </ul>
+        <ui>
+            <li><strong>Курган Славы под Минском </strong> величественный мемориал в честь победы над фашизмом, один из главных военных памятников в Республике Беларусь. Огромный насыпной холм на знаковом месте вряд ли оставит равнодушным хотя бы одного посетителя. Рассказываем историю событий и создания этого мемориала.</li>
+        </ui>
+        <div class="gallery">
+            <img src="https://avatars.dzeninfra.ru/get-zen_doc/1668009/pub_5f26d96251508b224e831ee2_5f26d9c79bdd3726363943eb/scale_1200" alt="Площадь Победы" class="active">
+            <img src="https://www.vgtk.by/results/wob.local/images/routes/route4/2_.jpg" alt="Курган Славы">
+            <button class="gallery-button" onclick="changeImage(this)">Сменить изображение</button>
+        </div>
+    </section>
+
+        <section>
+    <h2>Места памяти о Великой Отечественной войне</h2>
+    <ul>
+        <li><strong>Мемориальный комплекс "Хатынь" </strong>: Мемориальный комплекс Хатынь расположен в Беларуси и посвящен жертвам фашистского террора во время Великой Отечественной войны. Он был открыт в 1969 году на месте сожженной в 1943 году деревни Хатынь, где погибли 149 человек, включая женщин и детей.</li>
+    </ul>
+    <ul>
+        <li><strong>Братская могила в Гомеле </strong>:Братская могила в Гомеле — мемориал, увековечивающий память солдат, павших в боях за освобождение города во время Великой Отечественной войны. Здесь захоронены более 10 000 воинов, что делает её одним из крупнейших памятников в Беларуси.</li>
+    </ul>
+    <div class="gallery">
+        <img src="https://rossaprimavera.ru/static/files/acc4096fd721.jpg" alt="Хатынь 1" class="active">
+        <img src="https://www.bsut.by/images/MainMenuFiles/ObUniversitete/NovostiVse/Novosti/2021/60/hatyn.jpg" alt="Хатынь 2">
+        <img src="https://mosty-zara.by/ru/files/news/image/0/0/1592827053.jpg" alt="Братская могила">
+        <button class="gallery-button" onclick="changeImage(this)">Сменить изображение</button>
+    </div>
+</section>
+
+<section>
+        <h2>Музей Великой Отечественной войны и Брестская крепость</h2>
+        <ul>
+            <li><strong>Музей Великой Отечественной войны в Минске </strong> один из крупнейших музеев в Беларуси, открытый в 2014 году. Он расположен в центре столицы и представляет собой важный культурный и образовательный центр.Музей хранит богатую коллекцию экспонатов, включая документы, фотографии, личные вещи солдат и образцы военной техники. Экспозиция охватывает различные аспекты войны, от первых дней вторжения до освобождения страны.</li>
+        </ul>
+        <ul>
+            <li><strong>Брестская крепость </strong> это исторический военный объект в Беларуси, ставший символом мужества и героизма защитников во время Великой Отечественной войны. В начале войны, 22 июня 1941 года, крепость была атакована немецкими войсками, и её защитники сражались до последнего патрона, проявив невероятную стойкость.</li>
+        </ul>
+        <div class="gallery">
+            <img src="https://minsknews.by/wp-content/uploads/2020/05/muzej-istorii-velikoj-otechestvennoj-vojny-minsk-prospekt-pobeditelej-8-otz-1556978623-900x579.jpg" alt="Площадь Победы" class="active">
+            <img src="https://cdn.culture.ru/images/a808a662-3c04-532e-b409-10ce0fcefb75" alt="Курган Славы">
+            <button class="gallery-button" onclick="changeImage(this)">Сменить изображение</button>
+        </div>
+    </section>
+
+
+    <section>
+        <h2>Культура и Традиции</h2>
+        <p>Национальная одежда Беларуси характеризуется яркими цветами и уникальными узорами. Традиционные костюмы включают вышитые рубашки, юбки и платья, часто с использованием льняных и шерстяных тканей. Женская одежда часто украшена вышивкой, а мужская включает в себя рубашки и штаны, которые носили с поясами.</p>
+        <p>Белорусская кухня богата блюдами из картофеля, мяса и молочных продуктов. Драники, галушки, борщ и пироги — это лишь некоторые из популярных блюд, которые стоит попробовать. Каждое блюдо имеет свою историю и традиции приготовления, передаваемые из поколения в поколение.</p>
+
+        <div class="gallery">
+            <img src="https://i.pinimg.com/736x/02/f4/5a/02f45a69dc722483f9388aa38e5aca7a.jpg" alt="Культура 1" class="active">
+            <img src="https://i.pinimg.com/736x/bd/c2/1c/bdc21c33a282555e1cefc1b3da88f263.jpg" alt="Культура 2" >
+            <img src="https://sun9-18.userapi.com/s/v1/ig2/iog_1_cL82qIoMJ5x4AQ0XS7dO9zX8we1bkzIVbsLRXLRXTk8rBKdnEXnGAUnsrTuWWKIRCn5caO-nVudYK48VBG.jpg?quality=95&as=32x57,48x85,72x128,108x192,160x284,240x427,360x640,480x853,540x960,640x1138,720x1280&from=bu&u=sH3_aeipqUvP__meC1JzCwrpwpOly2hnhfmxFsSCHxQ&cs=240x0" alt="Культура 3" >
+            <button class="gallery-button" onclick="changeImage(this)">Сменить изображение</button>
+        </div>
+    </section>
+
+        <section>
+        <h2>Беларусь - мирная страна</h2>
+        <p>Беларусь — это мирная страна с богатой историей и культурным наследием. Здесь проживают дружелюбные и гостеприимные люди, которые ценят мир и стабильность. Природа Беларуси, с её зелеными лесами и чистыми озерами, создает гармоничную атмосферу для жизни и отдыха.</p>
+
+        <div class="gallery">
+            <img src="https://static.bntu.by/bntu/new/news/image_10857_f7de80ec2969d661fbed8a4aeeb814ea.jpeg" alt="Беларусь" class="active">
+        </div>
+    </section>
+
+    <section>
+        <h2>Природа Беларуси</h2>
+        <p>Беларусь известна своей живописной природой, обширными зелеными полями и спокойными реками. Здесь можно найти множество красивых мест, которые вдохновляют на патриотизм и гордость за свою страну.</p>
+        <p>Страна славится своими лесами, которые занимают около 40% территории. Это важные экосистемы, в которых обитают редкие виды животных и растений. Озера и реки Беларуси, такие как Нарочь и Днепр, привлекают туристов и рыбаков со всего мира.</p>
+        <p>Национальный парк "Беловежская пуща" является объектом всемирного наследия ЮНЕСКО и домом для зубров, символа белорусской природы.</p>
+
+        <div class="gallery">
+            <img src="https://avatars.mds.yandex.net/i?id=eee05bc489fb3cc2b23a893f3593f761-4566567-images-thumbs&n=13" alt="Природа 1" class="active">
+            <img src="https://i.pinimg.com/736x/d0/0e/8d/d00e8d9aa98eaa2b896b46b4bf008b30.jpg" alt="Природа 2">
+            <img src="https://1prof.by/wp-content/uploads/2024/05/les-1705.jpg" alt="Природа 3">
+            <button class="gallery-button" onclick="changeImage(this)">Сменить изображение</button>
+        </div>
+    </section>
+ </div>
+
+
+
+
+<script>
+    function changeImage(button) {
+        const gallery = button.parentElement;
+        const images = gallery.getElementsByTagName('img');
+        let currentIndex = 0;
+
+        for (let i = 0; i < images.length; i++) {
+            if (images[i].classList.contains('active')) {
+                currentIndex = i;
+                images[i].classList.remove('active');
+                break;
+            }
+        }
+
+        const nextIndex = (currentIndex + 1) % images.length;
+        images[nextIndex].classList.add('active');
+    }
+</script>
+
+<section>
+    <h2>Тест на знание истории Великой Отечественной войны</h2>
+    <button id="start-quiz" onclick="startQuiz()">Пройти тест</button>
+    <div id="quiz-container" class="quiz-container" style="display: none;">
+        <form id="quiz-form">
+            <div class="question">
+                <p>1. В каком году началась Великая Отечественная война?</p>
+                <label><input type="radio" name="q1" value="1"> 1941</label>
+                <label><input type="radio" name="q1" value="0"> 1940</label>
+                <label><input type="radio" name="q1" value="0"> 1942</label>
+                <label><input type="radio" name="q1" value="0"> 1943</label>
+            </div>
+            <div class="question">
+                <p>2. Какой мемориал увековечивает память жертв войны и репрессий?</p>
+                <label><input type="radio" name="q2" value="1"> Хатынь</label>
+                <label><input type="radio" name="q2" value="0"> Курган Славы</label>
+                <label><input type="radio" name="q2" value="0"> Площадь Победы</label>
+                <label><input type="radio" name="q2" value="0"> Братская могила</label>
+            </div>
+            <div class="question">
+                <p>3. Какой город был первым, на который напали фашистские войска в СССР?</p>
+                <label><input type="radio" name="q3" value="0"> Минск</label>
+                <label><input type="radio" name="q3" value="0"> Москва</label>
+                <label><input type="radio" name="q3" value="1"> Брест</label>
+                <label><input type="radio" name="q3" value="0"> Смоленск</label>
+            </div>
+            <div class="question">
+                <p>4. Какой памятник находится в центре Площади Победы в Минске?</p>
+                <label><input type="radio" name="q4" value="0"> Курган Славы</label>
+                <label><input type="radio" name="q4" value="1"> Монумент Победы</label>
+                <label><input type="radio" name="q4" value="0"> Братская могила</label>
+                <label><input type="radio" name="q4" value="0"> Мемориал "Хатынь"</label>
+            </div>
+            <div class="question">
+                <p>5. Сколько дней длилась оборона Брестской крепости?</p>
+                <label><input type="radio" name="q6" value="1"> 23</label>
+                <label><input type="radio" name="q6" value="0"> 15</label>
+                <label><input type="radio" name="q6" value="0"> 20</label>
+                <label><input type="radio" name="q6" value="0"> 30</label>
+            </div>
+            <div class="question">
+                <p>6. Какое событие произошло 22 июня 1941 года?</p>
+                <label><input type="radio" name="q7" value="1"> Нападение Германии на СССР</label>
+                <label><input type="radio" name="q7" value="0"> Окончание войны</label>
+                <label><input type="radio" name="q7" value="0"> Начало парада Победы</label>
+                <label><input type="radio" name="q7" value="0"> Освобождение Минска</label>
+            </div>
+            <div class="question">
+                <p>7. Какой знаменитый маршал командовал советскими войсками в битве под Сталинградом?</p>
+                <label><input type="radio" name="q8" value="0"> Георгий Жуков</label>
+                <label><input type="radio" name="q8" value="0"> Константин Рокоссовский</label>
+                <label><input type="radio" name="q8" value="0"> Александр Суворов</label>
+                <label><input type="radio" name="q8" value="1"> Василий Чуйков</label>
+            </div>
+            <div class="question">
+                <p>8. Какой город стал символом сопротивления во время войны?</p>
+                <label><input type="radio" name="q9" value="0"> Минск</label>
+                <label><input type="radio" name="q9" value="0"> Киев</label>
+                <label><input type="radio" name="q9" value="0"> Москва</label>
+                <label><input type="radio" name="q9" value="1"> Ленинград</label>
+            </div>
+            <div class="question">
+                <p>9. Какой мемориал был построен в честь партизан и подпольщиков?</p>
+                <label><input type="radio" name="q10" value="0"> Мемориал "Хатынь"</label>
+                <label><input type="radio" name="q10" value="0"> Курган Славы</label>
+                <label><input type="radio" name="q10" value="1"> Мемориал "Три штыка"</label>
+                <label><input type="radio" name="q10" value="0"> Братская могила</label>
+            </div>
+            <div class="question">
+                <p>10. Какова цвета было знамя Победы?</p>
+                <label><input type="radio" name="q11" value="1"> Красное Знамя</label>
+                <label><input type="radio" name="q11" value="0"> Белое Знамя</label>
+                <label><input type="radio" name="q11" value="0"> Черное Знамя</label>
+                <label><input type="radio" name="q11" value="0"> Зелёное Знамя</label>
+            </div>
+            <div class="question">
+                <p>11. Какой праздник отмечается 9 мая в Беларуси?</p>
+                <label><input type="radio" name="q12" value="1"> День Победы</label>
+                <label><input type="radio" name="q12" value="0"> День Независимости</label>
+                <label><input type="radio" name="q12" value="0"> День защитника Отечества</label>
+                <label><input type="radio" name="q12" value="0"> День памяти</label>
+            </div>
+            <div class="question">
+                <p>12. Какое важное сражение произошло в 1943 году?</p>
+                <label><input type="radio" name="q13" value="1"> Битва на Курской дуге</label>
+                <label><input type="radio" name="q13" value="0"> Битва за Москву</label>
+                <label><input type="radio" name="q13" value="0"> Битва за Сталинград</label>
+                <label><input type="radio" name="q13" value="0"> Битва за Ленинград</label>
+            </div>
+            <div class="question">
+                <p>13. Какой город был освобожден первым в ходе операции "Багратион"?</p>
+                <label><input type="radio" name="q14" value="0"> Минск</label>
+                <label><input type="radio" name="q14" value="1"> Витебск</label>
+                <label><input type="radio" name="q14" value="0"> Гродно</label>
+                <label><input type="radio" name="q14" value="0"> Брест</label>
+            </div>
+            <div class="question">
+                <p>14. Какой музей в Минске посвящен событиям Великой Отечественной войны?</p>
+                <label><input type="radio" name="q15" value="0"> Музей партизанской славы</label>
+                <label><input type="radio" name="q15" value="0"> Музей истории Беларуси</label>
+                <label><input type="radio" name="q15" value="0"> Музей войны 1812 года</label>
+                <label><input type="radio" name="q15" value="1"> Музей Великой Отечественной войны</label>
+            </div>
+            <button type="button" onclick="calculateScore()">Показать результаты</button>
+        </form>
+    </div>
+<div id="result" class="result" style="display: none;"></div>
+</section>
+
+<script>
+    function startQuiz() {
+        document.getElementById('quiz-container').style.display = 'block'; // Показывает тест
+        document.getElementById('start-quiz').style.display = 'none'; // Скрывает кнопку "Пройти тест"
+        document.getElementById('show-results').style.display = 'block'; // Показывает кнопку "Показать результаты"
+    }
+
+    function calculateScore() {
+        const form = document.getElementById('quiz-form');
+        const resultDiv = document.getElementById('result');
+        let score = 0;
+        let feedback = [];
+
+        // Подсчет баллов и формирование отзывов
+        const correctAnswers = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]; // Пример правильных ответов
+
+        for (let i = 1; i <= 14; i++) {
+            const question = form[`q${i}`];
+            if (question) {
+                let answered = false; // Флаг для проверки, выбран ли ответ
+                for (const option of question) {
+                    if (option.checked) {
+                        answered = true;
+                        score += parseInt(option.value);
+                        feedback.push(`Вопрос ${i}: ${option.value == 1 ? 'Правильно' : 'Неправильно'}`);
+                    }
+                }
+                if (!answered) {
+                    feedback.push(`Вопрос ${i}: Не задан ответ`);
+                }
+            }
+        }
+
+        // Вывод результата
+        resultDiv.innerHTML = `Вы набрали ${score} из 15 баллов.<br>${feedback.join('<br>')}`;
+        resultDiv.style.display = 'block'; // Показывает результаты
+        document.getElementById('quiz-container').style.display = 'none'; // Скрывает тест
+        document.getElementById('show-results').style.display = 'none';
+    }
+
+
+</script>
+
+</body>
+</html>
